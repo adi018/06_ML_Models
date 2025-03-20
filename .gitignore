@@ -1,0 +1,8 @@
+## 00_Transformer
+
+*__pycache__*
+*.pt
+*.json
+*runs/
+*weights/
+*wandb/
