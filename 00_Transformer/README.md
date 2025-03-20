@@ -31,11 +31,14 @@ Transformers introduce a self-attention mechanism that allows models to weigh th
 ---
 
 ## 🎥 Video Explanation
-[**Transformers Explained**](https://www.youtube.com/watch?v=4Bdc55j80l8) - Yannic Kilcher<br>
-[**StatsQuest: Transformers Neural Network**](https://www.youtube.com/watch?v=zxQyTK8quyY)<br>
-[**StatsQuest: Encoder-Only Transformers**](https://www.youtube.com/watch?v=GDN649X_acE&t=3s)<br>
-[**StatsQuest: Decoder-Only Transformers**](https://www.youtube.com/watch?v=bQ5BoolX9Ag&t=1731s)<br>
-[**StatsQuest: Understand mathematics of Queries, Keys, Values**](https://www.youtube.com/watch?v=KphmOJnLAdI&t=268s)<br>
+- [**Transformers**: Yannic Kilcher](https://www.youtube.com/watch?v=4Bdc55j80l8)<br>
+- [**StatsQuest**: Transformers Neural Network](https://www.youtube.com/watch?v=zxQyTK8quyY)<br>
+- [**StatsQuest**: Encoder-Only Transformers](https://www.youtube.com/watch?v=GDN649X_acE&t=3s)<br>
+- [**StatsQuest**: Decoder-Only Transformers](https://www.youtube.com/watch?v=bQ5BoolX9Ag&t=1731s)<br>
+- [**StatsQuest**: Understand mathematics of Queries, Keys, Values](https://www.youtube.com/watch?v=KphmOJnLAdI&t=268s)<br>
+
+## Video Tutorials
+- [**Coding Tutorial**: Coding Transformers](https://www.youtube.com/watch?v=ISNdQcPhsts&t=10537s)
 
 
 ---
