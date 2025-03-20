@@ -1,5 +1,18 @@
-## 00_Transformer
+## General
+*.DS_Store
+*.bak
+*.swp
+*.tmp
+*.log
+*.log.*
+*.cache
+*.out
+*.pid
+*.pid.lock
+*.pid.lock.*
 
+
+## 00_Transformer
 *__pycache__*
 *.pt
 *.json
