@@ -1,0 +1,18 @@
+name: 06_ml_00_trans  # Change this to your preferred environment name
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9  # You can change the Python version as needed
+  - pytorch=2.0.1
+  - torchvision=0.15.2
+  #- torchaudio=2.0.2
+  #- torchtext=0.15.2
+  - datasets=2.15.0
+  - tokenizers=0.13.3
+  - torchmetrics=1.0.3
+  - tensorboard=2.13.0
+  - altair=5.1.1
+  - pip
+  - pip:
+      - wandb==0.15.9  # WandB is mainly available via pip
