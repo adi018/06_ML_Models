@@ -19,3 +19,11 @@
 *runs/
 *weights/
 *wandb/
+
+## 03_Llama
+*__pycache__*
+*llama-2-7b*
+*.model
+*.chk
+*LICENSE*
+*USE_POLICY*
