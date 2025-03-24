@@ -27,3 +27,7 @@
 *.chk
 *LICENSE*
 *USE_POLICY*
+
+## 05_Quantization
+*__pycache__*
+*05_Quantization/data/*
