@@ -41,7 +41,9 @@ LLaMA models are transformer-based autoregressive language models, optimized for
 
 ## 🎥 Videos
 - [LLaMA Explained - Yannic Kilcher](https://www.youtube.com/watch?v=E5OnoYF2oAk)
-- [LLaMA 2 Explained - ]()
+- [LLaMA 2 Explained - Yannik Kilcher](https://www.youtube.com/watch?v=xs-0cp1hSnY)
+- [LLaMA Pro Explained - Yannik Kilcher](https://www.youtube.com/watch?v=hW3OVWfndLw)
+- [LLaMA 3 - Yannik Kilcher](https://www.youtube.com/watch?v=kzB23CoZG30)
 
 ---
 
