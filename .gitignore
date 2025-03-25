@@ -31,3 +31,8 @@
 ## 05_Quantization
 *__pycache__*
 *05_Quantization/data/*
+
+## 02_Vision_Model
+*ImageNetV2-matched-frequency*
+*.tar*
+*.gz*
