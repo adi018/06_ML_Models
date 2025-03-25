@@ -36,3 +36,7 @@
 *ImageNetV2-matched-frequency*
 *.tar*
 *.gz*
+
+## 04_RAG
+*__pycache__*
+*04_RAG/*/chroma_persistent_storage/*
