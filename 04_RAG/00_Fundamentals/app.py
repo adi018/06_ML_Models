@@ -4,6 +4,7 @@ from openai import OpenAI
 from chromadb.utils.embedding_functions import EmbeddingFunction
 import requests
 from chromadb.utils import embedding_functions
+from PyPDF2 import PdfReader
 
 # Custom embedding function that calls Ollama's local embedding API
 class OllamaEmbeddingFunction(EmbeddingFunction):
@@ -57,7 +58,20 @@ def load_documents_from_directory(directory_path):
                 os.path.join(directory_path, filename), "r", encoding="utf-8"
             ) as file:
                 documents.append({"id": filename, "text": file.read()})
+        elif filename.endswith(".pdf"):
+            # Read PDF files
+            pdf_text = ""
+            try:
+                file_path = os.path.join(directory_path, filename)
+                reader = PdfReader(file_path)
+                for page in reader.pages:
+                    pdf_text += page.extract_text()  # Extract text from each page
+            except Exception as e:
+                print(f"Error reading {filename}: {e}")
+                continue
+            documents.append({"id": filename, "text": pdf_text})
     return documents
+    #return documents
 
 # Function to split text into chunks
 def split_text(text, chunk_size=1000, chunk_overlap=20):
@@ -205,6 +219,7 @@ for doc in chunked_documents:
 # Example query
 # query_documents("tell me about AI replacing TV writers strike.")
 # Example query and response generation
+# question = "tell me about Aditya Kumar Agarwal"
 question = "tell me about databricks"
 relevant_chunks = query_documents(question)
 answer = generate_response(question, relevant_chunks)
