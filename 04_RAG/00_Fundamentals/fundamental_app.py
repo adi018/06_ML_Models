@@ -186,7 +186,7 @@ client = OpenAI(
 )
 
 # Load documents from the directory
-directory_path = "./news_articles"
+directory_path = "./data/00_fundamental"
 documents = load_documents_from_directory(directory_path)
 
 print(f"Loaded {len(documents)} documents")
