@@ -49,6 +49,13 @@ Retrieval-Augmented Generation (RAG) is a powerful architecture that enhances la
 - Uses a **simple top-k retriever** (e.g., BM25 or DPR)
 - Generator simply **concatenates** retrieved documents
 - No reranking, no filtering, no memory optimization
+- It has basically 3 steps:
+    - **Indexing**: Parsing, pre-processing, extracting and chunking data from docs and converting chunked data into vector ...
+    - **Retrieval**: Turn question into vector. Vector comparision. Retrieves closely related chunks
+    - **Generation**: The query, choosen docs i.e. context is combined into a prompt template and feed to LLM. The LLM generates an answer or response.
+
+![Alt Text](./00_Fundamentals/00_Fundamental_RAG.png)
+[Source](https://github.com/hkproj/retrieval-augmented-generation-notes/blob/main/Slides.pdf)
 
 #### ✅ Pros:
 - Easy to implement
@@ -57,6 +64,10 @@ Retrieval-Augmented Generation (RAG) is a powerful architecture that enhances la
 #### ⚠️ Cons:
 - Prone to hallucinations
 - May include irrelevant content
+- Inefficient in handling large-scale data
+    - Takes too long to find relevant docs, or miss critical info due to bad indexing
+- Limited contexual understanding
+    - Focus on keyword matching or basic semantic search --> May lead to retrieving irrelevant or partially relevant documents
 
 ---
 
@@ -67,6 +78,76 @@ Retrieval-Augmented Generation (RAG) is a powerful architecture that enhances la
   - **Chunk merging or summarization**
   - **ReAct-style reasoning chains**
   - **Retrieval post-processing** (e.g., deduplication)
+
+This section explains several key techniques used in advanced Retrieval-Augmented Generation (RAG) pipelines to improve accuracy, reduce hallucinations, and enhance relevance.
+
+---
+
+#### 1. **Hybrid Retrieval (Dense + Sparse)**
+
+**Hybrid retrieval** combines both **sparse** and **dense** retrieval techniques to improve the quality of retrieved documents. 
+
+- **Sparse retrieval** (like BM25) relies on exact keyword matching and performs well when the query contains specific terms.
+- **Dense retrieval** uses embeddings and semantic similarity to retrieve documents that are conceptually related to the query, even if they don't contain the exact keywords.
+
+##### 🚀 Why It's Important:
+- **Dense** retrieval finds **semantically relevant documents** that may not contain exact keywords.
+- **Sparse** retrieval ensures **high-precision results** based on direct keyword matching.
+- **Together**, they ensure better coverage and relevance in retrieving useful documents.
+
+---
+
+#### 2. **Document Reranking (e.g., BGE, ColBERT)**
+
+**Document reranking** is a second pass where documents retrieved from hybrid retrieval are scored and reordered based on how well they actually answer the query. This process improves precision by **boosting the most relevant documents to the top**.
+
+- **BGE (BAAI General Embedding)**: A cross-encoder that evaluates document-query similarity by encoding both together and scoring their relevance.
+- **ColBERT**: Uses fine-grained token-level interactions between query and documents to improve relevance scoring.
+
+##### 🚀 Why It's Important:
+- Improves the accuracy of top results by **filtering out less relevant documents**.
+- Helps prevent hallucinations by pushing higher-quality, contextually relevant docs to the top.
+
+---
+
+#### 3. **Chunk Merging or Summarization**
+
+**Chunk merging** involves combining multiple related chunks from retrieved documents into a coherent, larger context before passing them to the generator. **Summarization** condenses retrieved content into shorter summaries that retain the essential information.
+
+##### 🚀 Why It's Important:
+- Helps reduce redundant or conflicting information, making the input more **focused and concise**.
+- **Fits more content** into the limited context window of large language models.
+- Enhances the quality of generated answers by providing **clean, concise input**.
+
+---
+
+#### 4. **ReAct-Style Reasoning Chains**
+
+**ReAct (Reason + Act)** chains involve a multi-step reasoning process where the model alternates between reasoning (thinking about the query) and acting (retrieving new information or generating intermediate steps) to arrive at a final answer. It's used in more sophisticated RAG systems where step-by-step reasoning is needed.
+
+##### 🚀 Why It's Important:
+- Mimics **human-like decision-making**, enabling the model to handle **complex queries** that require multiple steps to answer.
+- Helps models avoid hallucinations by **justifying each step** before moving forward.
+
+---
+
+#### 5. **Retrieval Post-Processing (e.g., Deduplication)**
+
+After retrieval, **post-processing** techniques like deduplication or content filtering are used to refine the final set of retrieved documents. This ensures the generator only receives the most relevant and diverse information.
+
+- **Deduplication**: Removes near-identical or repeated content across multiple documents.
+- **Filtering**: Drops irrelevant or low-confidence results from the retrieved set.
+
+##### 🚀 Why It's Important:
+- Reduces noise by removing irrelevant or redundant information.
+- **Improves generation quality** by feeding in cleaner, more diverse data to the generator.
+
+---
+
+These techniques can help transform a Naive RAG pipeline into an advanced system that delivers more reliable, accurate, and contextually relevant results.
+
+![Alt Text](./00_Fundamentals/01_Advanced_RAG.png)
+
 
 #### ✅ Pros:
 - Higher accuracy and factual grounding
