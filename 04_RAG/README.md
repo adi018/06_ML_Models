@@ -164,6 +164,8 @@ These techniques can help transform a Naive RAG pipeline into an advanced system
 - Enables **vision-language** tasks with retrieval
 - Uses models like CLIP for embedding non-text modalities
 
+![Alt Text](./01_Multimodal/data/Multimodal_RAG.jpg)
+
 #### ✅ Use Cases:
 - Image QA (e.g., "What’s in this photo?")
 - Video-grounded chat
@@ -199,6 +201,8 @@ These techniques can help transform a Naive RAG pipeline into an advanced system
 - [Retrieval-Augmented Language Model Pre-Training (Paper Explained - Yannic Kilcher)](https://www.youtube.com/watch?v=lj-LGrnh1oU)
 - [LangChain RAG Demo](https://www.youtube.com/watch?v=qN_2fnOPY-M&t=513s)
 - [RAG - Umar Jamil](https://www.youtube.com/watch?v=rhZgXNdhWDY)
+- [RAG - Naive and Advanced](https://www.youtube.com/watch?v=ea2W8IogX80&t=1271s)
+- [RAG - Multimodal](https://www.youtube.com/watch?v=qCAvqsBbN2Y&t=8s)
 ---
 
 ## 🚀 Quickstart Code Snippet (Hugging Face)

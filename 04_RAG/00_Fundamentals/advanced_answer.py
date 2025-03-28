@@ -99,6 +99,14 @@ results = chroma_collection.query(
 )
 retrieved_documents = results["documents"][0]
 
+# Top retrieved documents based on the joint query
+print("==== Retrieved Documents ====")
+for idx, doc in enumerate(retrieved_documents):
+    print(f"########## Document {idx + 1} ##########")
+    print(word_wrap(doc))
+    print("")
+# end for
+
 embeddings = chroma_collection.get(include=["embeddings"])["embeddings"]
 umap_transform = umap.UMAP(random_state=0, transform_seed=0).fit(embeddings)
 projected_dataset_embeddings = project_embeddings(embeddings, umap_transform)
