@@ -48,10 +48,6 @@ LangGraph-Course/
 
 #### 1. Clone the Repository
 
-```zsh
-git clone https://github.com/rdtiv/LangGraph-Course.git
-cd LangGraph-Course
-```
 
 #### 2. Install pyenv (if not already installed)
 
@@ -165,8 +161,4 @@ Install all dependencies with:
 uv pip install -r requirements.txt
 ```
 
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=iamvaibhavmehra/LangGraph-Course-freeCodeCamp&type=Date)](https://www.star-history.com/#iamvaibhavmehra/LangGraph-Course-freeCodeCamp&Date)
 
