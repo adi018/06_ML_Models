@@ -22,7 +22,7 @@ This folder contains training code for a sample transformer model using Hugging 
 This folder contains code for RAG fundamentals, PDF parser using multimodal models and how to locally deploy chat bots.
 
 ## [06_Agentic_AI](./06_Agentic_AI)
-Coming Soon ...
+This folder contains code for Agents and AI Agents using LangGraph.
 
 
 Feel free to explore each folder for detailed implementations and examples.
